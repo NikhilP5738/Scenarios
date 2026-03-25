@@ -1,58 +1,48 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-class Treadmill {
-    int TimeSpent_Minutes;
-    String SpeedActivity;
-    int RunningSpeed_MilesPerHour;
-    int Distance_Miles;
-    int RunningCaloriesBurned;
-    String ProgramType;
-    public Treadmill(int TimeSpent_Minutes, String SpeedActivity, int RunningSpeed_MilesPerHour, int Distance_Miles, int RunningCaloriesBurned, String ProgramType) {
-        this.TimeSpent_Minutes = TimeSpent_Minutes;
-        this.SpeedActivity = SpeedActivity;
-        this.RunningSpeed_MilesPerHour = RunningSpeed_MilesPerHour;
-        this.Distance_Miles = Distance_Miles;
-        this.RunningCaloriesBurned = RunningCaloriesBurned;
-        this.ProgramType = ProgramType;
+class ID {
+    String name;
+    String birthday;
+    String gender;
+    String birthplace;
+    public ID(String name, String birthday, String gender, String birthplace) {
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.birthplace = birthplace;
     }
-    public void displayTreadmill() {
-        System.out.println(this.TimeSpent_Minutes);
-        System.out.println(this.SpeedActivity);
-        System.out.println(this.RunningSpeed_MilesPerHour);
-        System.out.println(this.Distance_Miles);
-        System.out.println(this.RunningCaloriesBurned);
-        System.out.println(this.ProgramType);
+    public void displayID() {
+        System.out.println(this.name);
+        System.out.println(this.birthday);
+        System.out.println(this.gender);
+        System.out.println(this.birthplace);
+
+    }
+}
+class FoodOrder {
+    String FoodItem;
+    int FoodCost;
+    int FoodQuantity;
+    int TotalCost = FoodCost * FoodQuantity;
+    public FoodOrder(String FoodItem, int FoodCost, int FoodQuantity, int TotalCost) {
+       this.FoodItem = FoodItem;
+       this.FoodCost = FoodCost;
+        this.FoodQuantity = FoodQuantity;
+        this.TotalCost = TotalCost;
+    }
+    public void displayFoodOrder() {
+        System.out.println(this.FoodItem);
+        System.out.println(this.FoodCost);
+        System.out.println(this.FoodQuantity);
+        System.out.println(this.TotalCost);
     }
 
 }
-class Set {
-    int Set;
-    int Set2;
-    int Weight_Kg;
-    int Reps;
-    public Set(int Set, int Weight_Kg, int Reps) {
-        this.Set = Set;
-        this.Weight_Kg = Weight_Kg;
-        this.Reps = Reps;
-    }
-    public void displaySet() {
-        System.out.println(this.Set);
-        System.out.println(this.Weight_Kg);
-        System.out.println(this.Reps);
-    }
-    public void displaySecondSet() {
-        System.out.println(this.Set);
-        System.out.println(this.Weight_Kg);
-        System.out.println(this.Reps);
-    }
-}
 public class Main {
     public static void main(String[] args) {
-        Treadmill t = new Treadmill(36, "Running", 3,  7, 278, "Manual");
-        t.displayTreadmill();
-        Set l = new Set(1, 100, 11);
-        l.displaySet();
-        Set l2 = new Set(2, 110, 9);
-        l2.displaySecondSet();
+        ID i =  new ID("Michael", "January 12, 1994", "Male" , "San Jose, California" );
+        i.displayID();
+        FoodOrder f = new FoodOrder("1 Bagel, 1 Coffee", 2 , 2, 4);
+        f.displayFoodOrder();
     }
 }
